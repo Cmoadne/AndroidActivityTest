@@ -1,5 +1,6 @@
 package com.example.cmoadne.activitytest;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -37,5 +38,13 @@ public class SecondActivity extends BaseAvtivity {
                 startActivity(intent);
             }
         });
+    }
+
+    //启用活动的最佳写法，这样可以一目了然指定活动需要什么参数
+    public static void startAction(Context context,String string1,String string2){
+        Intent intent = new Intent(context,SecondActivity.class);
+        intent.putExtra("data_param1",string1);
+        intent.putExtra("data_param2",string2);
+        context.startActivity(intent);
     }
 }

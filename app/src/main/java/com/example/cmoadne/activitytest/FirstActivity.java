@@ -150,6 +150,15 @@ public class FirstActivity extends BaseAvtivity {
                 startActivityForResult(intent, 1);
             }
         });
+
+        //启动活动的最佳写法
+        Button button_good_open = (Button) findViewById(R.id.button_1_goodstart);
+        button_good_open.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SecondActivity.startAction(FirstActivity.this,"data1","data2");
+            }
+        });
     }
 
     //重写onActivityResult

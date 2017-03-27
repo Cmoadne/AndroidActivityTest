@@ -13,7 +13,7 @@ public class ActivityCllector {
     //public 只创建一次的变量
     public static List<Activity> activities = new ArrayList<>();
 
-    //static 修饰只能在这个文件调用
+    //static 修饰方法，可以不需要实例就能外部调用
     public static void addActivity(Activity activity){
         activities.add(activity);
     }
