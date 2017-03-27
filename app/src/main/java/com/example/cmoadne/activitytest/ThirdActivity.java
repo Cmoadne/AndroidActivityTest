@@ -19,7 +19,7 @@ public class ThirdActivity extends BaseAvtivity {
                 Toast.makeText(ThirdActivity.this, "Back to activity 1", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(ThirdActivity.this, FirstActivity.class);
-                finish();
+                //finish();
                 startActivity(intent);
             }
         });

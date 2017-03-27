@@ -45,6 +45,7 @@ public class FirstActivity extends BaseAvtivity {
         Log.d(TAG, "onCreate: 333");
         setContentView(R.layout.first_layout);//给当前活动加载布局
         //点击显示一个toast
+        //关闭所有活动并杀掉进程
         Button button_exit = (Button) findViewById(R.id.button_1_exit);
         button_exit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,8 +54,12 @@ public class FirstActivity extends BaseAvtivity {
                 //1、显示一个toast
                 //来龙去脉 内容 时长
                 Toast.makeText(FirstActivity.this, "You clicked Button Exit", Toast.LENGTH_SHORT).show();
+                //结束所有活动
+                ActivityCllector.finishAll();
+                //杀掉进程
+                android.os.Process.killProcess(android.os.Process.myPid());
                 //销毁活动
-                finish();
+                //finish();
             }
         });
         Button button_evident = (Button) findViewById(R.id.button_1_evident);
@@ -69,7 +74,7 @@ public class FirstActivity extends BaseAvtivity {
                 //3、显示Intent
                 Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
                 //先销毁再开启活动，只保留一个活动，效果有翻页效果
-                finish();
+                //finish();
                 startActivity(intent);
 
             }
@@ -87,7 +92,7 @@ public class FirstActivity extends BaseAvtivity {
                 Intent intent = new Intent("com.example.activitytest.ACTION_START");
                 intent.addCategory("SSSSS");
                 //3、销毁活动
-                finish();
+                //finish();
                 startActivity(intent);
             }
         });
@@ -129,7 +134,7 @@ public class FirstActivity extends BaseAvtivity {
                 String data = "Hello Activity 4";
                 Intent intent = new Intent(FirstActivity.this, ForthActivity.class);
                 intent.putExtra("Extra_data", data);
-                finish();
+                //finish();
                 startActivity(intent);
             }
         });

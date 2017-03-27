@@ -33,7 +33,7 @@ public class SecondActivity extends BaseAvtivity {
 
                 //3、显示Intent
                 Intent intent = new Intent(SecondActivity.this,FirstActivity.class);
-                finish();
+                //finish();
                 startActivity(intent);
             }
         });
