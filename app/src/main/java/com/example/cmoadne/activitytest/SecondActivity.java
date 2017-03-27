@@ -1,13 +1,12 @@
 package com.example.cmoadne.activitytest;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity extends BaseAvtivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
