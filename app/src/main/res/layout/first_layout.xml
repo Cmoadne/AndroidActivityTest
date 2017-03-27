@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <!--@+id 定义一个id 宽度和父元素一样  高度包含内容就行-->
+    <Button
+        android:id="@+id/button_1_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit"/>
+    <Button
+                  android:id="@+id/button_1_evident"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="evident_activity_2"
+                  />
+    <Button
+        android:id="@+id/button_1_hidden"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hidden_activity_2"
+        />
+    <Button
+        android:id="@+id/button_1_web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="www.baidu.com"
+        />
+    <Button
+        android:id="@+id/button_1_tel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tel:10086"/>
+    <Button
+        android:id="@+id/button_1_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="send data to activity 4"
+        />
+    <Button
+        android:id="@+id/button_1_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get data from activity 4"
+        />
+
+</LinearLayout>

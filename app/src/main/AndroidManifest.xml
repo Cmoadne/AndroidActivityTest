@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.cmoadne.activitytest">
+
+    <!-- 注册活动 -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- .表示缩写，因为manifest已经指定了目录 -->
+        <!-- label标题栏内容也是启动器中名字 -->
+        <activity
+            android:name=".FirstActivity"
+            android:label="This is FirstActivity">
+
+            <!-- 成为主活动 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SecondActivity"
+            android:label="This is SecondActivity">
+
+            <!-- 4、隐式Intent，自动选择 -->
+            <!-- 同时匹配action和category才能响应 -->
+            <!-- ""内容可以自己取 -->
+            <intent-filter>
+                <action android:name="com.example.activitytest.ACTION_START"/>
+                <!-- 默认category即没有发送category时可以响应 -->
+                <category android:name="android.intent.category.DEFAULT"/>
+                <!-- 只有响应发送了SSSSS的category -->
+                <category android:name="SSSSS"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ThirdActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <!-- 指定数据协议 -->
+                <data android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ForthActivity">
+        </activity>
+    </application>
+
+</manifest>
