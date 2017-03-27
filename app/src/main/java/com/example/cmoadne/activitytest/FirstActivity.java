@@ -43,7 +43,8 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //打印
-        Log.d(TAG, "onCreate: 333");
+        Log.d(TAG, "onCreate: Activity 1");
+        Log.d(TAG, this.toString());
         setContentView(R.layout.first_layout);//给当前活动加载布局
         //点击显示一个toast
         Button button_exit = (Button) findViewById(R.id.button_1_exit);
@@ -146,6 +147,17 @@ public class FirstActivity extends AppCompatActivity {
                 startActivityForResult(intent, 1);
             }
         });
+
+        //标准模式启动活动1
+        Button button_standard = (Button) findViewById(R.id.button_1_standard);
+        button_standard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //演示，所以直接继续开活动1
+                Intent intent = new Intent(FirstActivity.this, FirstActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     //重写onActivityResult
@@ -161,7 +173,8 @@ public class FirstActivity extends AppCompatActivity {
                     Log.d(TAG, "onActivityResult: " + returnedData);
                 }
                 break;
-            default:break;
+            default:
+                break;
         }
     }
 
