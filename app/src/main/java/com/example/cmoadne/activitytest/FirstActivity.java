@@ -43,8 +43,10 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //打印
-        Log.d(TAG, "onCreate: Activity 1");
-        Log.d(TAG, this.toString());
+        //Log.d(TAG, "onCreate: Activity 1");
+        //Log.d(TAG, this.toString());
+        //显示栈ID？
+        Log.d(TAG, "Task id is  " + getTaskId());
         setContentView(R.layout.first_layout);//给当前活动加载布局
         //点击显示一个toast
         Button button_exit = (Button) findViewById(R.id.button_1_exit);
@@ -71,7 +73,7 @@ public class FirstActivity extends AppCompatActivity {
                 //3、显示Intent
                 Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
                 //先销毁再开启活动，只保留一个活动，效果有翻页效果
-                finish();
+                //finish();
                 startActivity(intent);
 
             }
@@ -176,6 +178,11 @@ public class FirstActivity extends AppCompatActivity {
             default:
                 break;
         }
+    }
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        Log.d(TAG, "onRestart : activity 1");
     }
 
 }

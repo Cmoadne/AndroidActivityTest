@@ -11,5 +11,12 @@
         android:layout_height="wrap_content"
         android:text="Back"
         />
+    <!--@+id 定义一个id 宽度和父元素一样  高度包含内容就行-->
+    <Button
+        android:id="@+id/button_2_to_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="To activity 3"
+        />
 
 </LinearLayout>

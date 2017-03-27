@@ -12,8 +12,13 @@
 
         <!-- .表示缩写，因为manifest已经指定了目录 -->
         <!-- label标题栏内容也是启动器中名字 -->
+        <!--默认启动模式会重复开很多活动-->
+        <!--启动模式为singleTOP 当活动处于顶端时 不再创建活动-->
+        <!--singleTASK模式会检查栈中有无这个活动，有的话不创建，直接把该活动之上的活动弹出，这个活动成为栈顶-->
+        <!--singleInstance给活动创建一个单独的返回栈，这样就可以很多程序共享一个实例了-->
         <activity
             android:name=".FirstActivity"
+            android:launchMode="singleTop"
             android:label="This is FirstActivity">
 
             <!-- 成为主活动 -->
@@ -25,6 +30,7 @@
         </activity>
         <activity
             android:name=".SecondActivity"
+            android:launchMode="singleInstance"
             android:label="This is SecondActivity">
 
             <!-- 4、隐式Intent，自动选择 -->
